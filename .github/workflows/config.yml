@@ -13,12 +13,16 @@ jobs:
     - uses: actions/checkout@master
     - name: Run a multi-line script
     - run: |
-        make build
+        echo build
   test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - run: |
+        echo test
   deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - run: |
+        echo deploy
