@@ -8,22 +8,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os-image: [ubuntu-latest, windows-latest]
+    runs-on: $os-image
     steps:
-    - uses: actions/checkout@v2
-    - run: |
-        echo build
-        cargo test
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - run: |
-        echo test
-        cargo test
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - run: |
-        echo deploy
+      - uses: actions/checkout@v2
+      - run: |
+          echo Hello, World!
