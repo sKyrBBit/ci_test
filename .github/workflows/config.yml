@@ -11,8 +11,8 @@ jobs:
     strategy:
       matrix:
         os-image: [ubuntu-latest, windows-latest]
-    runs-on: $os-image
+    runs-on: ${os-image}
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo Hello, World!
+          make
