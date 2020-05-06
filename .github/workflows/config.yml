@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os-image: [ubuntu-latest, windows-latest]
-    runs-on: ${matrix.os-image}
+    runs-on: ${os-image}
     steps:
       - uses: actions/checkout@v2
       - run: |
